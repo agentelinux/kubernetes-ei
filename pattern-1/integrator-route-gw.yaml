@@ -5,7 +5,9 @@ metadata:
 spec:
   to:
     kind: Service
-    name: wso2ei-pattern1-integrator-service
+    name: wso2ei-pattern1-integrator-gateway-service
     weight: 100
   port:
-    targetPort: servlet-http
+    targetPort: pass-through-https
+  tls:
+    termination: passthrough

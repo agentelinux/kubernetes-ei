@@ -18,6 +18,10 @@ metadata:
   name: wso2ei-pattern1-integrator-deployment
 spec:
   replicas: 1
+  strategy:
+    type: Recreate  
+  triggers:
+  - type: ConfigChange  
   template:
     metadata:
       labels:
@@ -27,6 +31,15 @@ spec:
       - name: wso2ei-pattern1-integrator
         image: openshift/wso2ei-kubernetes-integrator:6.1.1
         imagePullPolicy: IfNotPresent
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /services/echo.echoHttpSoap12Endpoint?wsdl
+            port: 9763
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 5
         ports:
         - containerPort: 8280
           protocol: TCP
