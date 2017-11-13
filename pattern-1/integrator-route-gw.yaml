@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Route
 metadata:
-  name: wso2ei-pattern1-integrator-gw-route
+  name: wso2ei-pattern1-integrator-route-gw
 spec:
   to:
     kind: Service

@@ -41,6 +41,7 @@ oc login -u developer -n wso2
 
 # configuration maps
 echoBold 'Creating Configuration Maps...'
+cd pattern-1/
 oc create configmap integrator-conf --from-file=conf/integrator/conf/
 oc create configmap integrator-conf-axis2 --from-file=conf/integrator/conf/axis2/
 oc create configmap integrator-conf-datasources --from-file=conf/integrator/conf/datasources/
@@ -49,8 +50,8 @@ oc create configmap integrator-conf-security --from-file=conf/integrator/conf/se
 # mysql
 echoBold 'Deploying WSO2 Integrator Databases...'
 oc create -f mysql-volume.yaml
-oc create -f mysql-service.json
-oc create -f mysql-deployment.json
+oc create -f mysql-service.yaml
+oc create -f mysql-deployment.yaml
 sleep 10s
 
 # integrator
@@ -58,7 +59,8 @@ echoBold 'Deploying WSO2 Integrator...'
 oc create -f integrator-service.yaml
 oc create -f integrator-gateway-service.yaml
 oc create -f integrator-deployment.yaml
-oc create -f integrator-route.yaml
+oc create -f integrator-route-gw.yaml
+oc create -f integrator-route-ui.yaml
 #oc login -u system:admin -n wso2
 #oc create -f integrator-ingress.yaml
 #oc login -u developer -n wso2

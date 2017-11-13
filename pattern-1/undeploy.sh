@@ -23,15 +23,16 @@ function echoBold () {
 
 # integrator
 echoBold 'Un-deploying WSO2 Integrator...'
-oc delete -f integrator-route.yaml
+oc delete -f integrator-route-gw.yaml
+oc delete -f integrator-route-ui.yaml
 oc delete -f integrator-gateway-service.yaml
 oc delete -f integrator-service.yaml
 oc delete -f integrator-deployment.yaml
 
 # databases
 echoBold 'Un-deploying WSO2 Integrator Databases...'
-oc delete -f mysql-service.json
-oc delete -f mysql-deployment.json
+oc delete -f mysql-service.yaml
+oc delete -f mysql-deployment.yaml
 oc delete -f mysql-volume.yaml
 
 # configuration maps

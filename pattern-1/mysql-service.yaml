@@ -19,7 +19,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    deployment: wso2ei-pattern1-mysql
+    name: wso2ei-pattern1-mysql
   ports:
   - name: mysql-port
     port: 3306
