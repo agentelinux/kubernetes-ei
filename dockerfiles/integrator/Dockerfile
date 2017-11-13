@@ -16,7 +16,7 @@
 #
 # ------------------------------------------------------------------------
 
-FROM docker.wso2.com/wso2ei-kubernetes-base:6.1.1
+FROM openshift/wso2ei-kubernetes-base:6.1.1
 
 # expose ports
 EXPOSE 8280 8243 9763 9443
@@ -25,4 +25,5 @@ CMD mkdir -p ${USER_HOME}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}-conf/integrator/
     && cp ${USER_HOME}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}-conf/integrator/conf/* ${WSO2_SERVER_HOME}/conf/ \
     && cp ${USER_HOME}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}-conf/integrator/conf-axis2/* ${WSO2_SERVER_HOME}/conf/axis2/ \
     && cp ${USER_HOME}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}-conf/integrator/conf-datasources/* ${WSO2_SERVER_HOME}/conf/datasources/ \
+    && cp ${USER_HOME}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}-conf/integrator/conf-security/* ${WSO2_SERVER_HOME}/conf/security/ \
     && ${WSO2_SERVER_HOME}/bin/integrator.sh

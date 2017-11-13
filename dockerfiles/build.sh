@@ -24,9 +24,9 @@ pushd integrator
 ./build.sh
 popd
 
-pushd analytics
-./build.sh
-popd
+#pushd analytics
+#./build.sh
+#popd
 
 pushd mysql
 ./build.sh

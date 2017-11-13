@@ -14,7 +14,8 @@
 # limitations under the License
 # ------------------------------------------------------------------------
 
-FROM mysql:5.7
+#FROM centos/mysql-57-centos7:latest
+FROM mysql:5.7.20
 MAINTAINER WSO2 Docker Maintainers "dev@wso2.org"
 
 # files

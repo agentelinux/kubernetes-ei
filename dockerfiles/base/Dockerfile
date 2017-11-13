@@ -36,7 +36,7 @@ ARG WSO2_SERVER_HOME=${USER_HOME}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}
 ARG JDK_ARCHIVE=jdk-8u*-linux-x64.tar.gz
 ARG JAVA_HOME=${USER_HOME}/java
 # jdbc driver
-ARG JDBC_DRIVER=mysql-connector-java-5*-bin.jar
+ARG JDBC_DRIVER=*.jar
 
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends --no-install-suggests unzip telnet iproute2 \

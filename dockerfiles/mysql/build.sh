@@ -23,9 +23,9 @@ productVersion=6.1.1
 platform=kubernetes
 # MySQL parameters
 rdbms=mysql
-sqlVersion=5.7
+sqlVersion=latest
 # Image Info
-repository=docker.wso2.com/${product}-${platform}-${rdbms}
+repository=openshift/${product}-${platform}-${rdbms}
 tag=${sqlVersion}
 
 echo "Creating ${repository}:${tag}..."

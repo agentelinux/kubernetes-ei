@@ -1,0 +1,31 @@
+{
+  "kind":"Service",
+  "apiVersion":"v1",
+  "metadata":{
+    "name":"wso2ei-pattern1-mysql-service",
+    "labels":{
+      "name":"wso2ei-pattern1-mysql-service"
+    }
+  },
+  "spec":{
+    "ports":[
+      {
+        "protocol":"TCP",
+        "port":3306,
+        "targetPort":3306,
+        "nodePort":0
+      }
+    ],
+    "selector":{
+      "name":"mysql-wso2cabon"
+    },
+    "portalIP":"None",
+    "type":"ClusterIP",
+    "sessionAffinity":"None"
+  },
+  "status":{
+    "loadBalancer":{
+
+    }
+  }
+}

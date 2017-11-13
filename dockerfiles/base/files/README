@@ -1,0 +1,7 @@
+Files (do you need)
+
+wso2ei-6.1.1.zip <-- WSO2 Enterprise Integrator
+jdk-8u151-linux-x64.tar.gz <-- JVM 8
+ojdbc7.jar i <-- Oracle Database JDBC
+sqljdbc42.jar <-- MS SQL Server JDBC
+mysql-connector-java-5.1.40-bin.jar  <-- MySQL Server JDBC
